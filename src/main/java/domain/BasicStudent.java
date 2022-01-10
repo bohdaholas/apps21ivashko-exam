@@ -11,9 +11,6 @@ public class BasicStudent implements Jsonable {
     protected String surname;
     protected Integer year;
 
-    public BasicStudent() {
-    }
-
     public BasicStudent(String name, String surname, Integer year) {
         this.name = name;
         this.surname = surname;
@@ -22,8 +19,10 @@ public class BasicStudent implements Jsonable {
 
     @Override
     public JsonObject toJsonObject() {
-        return new JsonObject(new JsonPair("name", new JsonString(name)),
-                        new JsonPair("surname", new JsonString(surname)),
-                            new JsonPair("year", new JsonNumber(year)));
+        return new JsonObject(
+                new JsonPair("name", new JsonString(name)),
+                new JsonPair("surname", new JsonString(surname)),
+                new JsonPair("year", new JsonNumber(year))
+        );
     }
 }
