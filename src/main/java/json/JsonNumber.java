@@ -10,6 +10,10 @@ public class JsonNumber extends Json {
         this.number = number;
     }
 
+    public Number getNumber() {
+        return number;
+    }
+
     @Override
     public String toJson() {
         return number.toString();
